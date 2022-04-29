@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Track extends React.Component {
+export class Track extends React.Component {
     renderAction(isRemoval){
         return (isRemoval ? '-' : '+' )
     }
