@@ -1,8 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { SeachBar } from '../SearchBar/SearchBar'
+import { SearchResults } from '../SearchResults/SearchResults';
+import { Playlist } from '../Playlist/Playlist';
 
-function App() {
-  return (
+class App extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  return (){
     <div>
   <h1>Ja<span className="highlight">mmm</span>ing</h1>
   <div className="App">
@@ -13,7 +20,7 @@ function App() {
     </div>
   </div>
 </div>
-  );
+  };
 }
 
 export default App;
