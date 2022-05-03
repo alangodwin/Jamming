@@ -8,10 +8,20 @@ import { Playlist } from '../Playlist/Playlist';
 class App extends React.Component {
   constructor(props){
     super(props);
+    this.addTrack = this.addTrack.bind(this);
     this.state = { searchResults: [{name:"",artist:"",album:"",id:""}], 
   playlistName: 'chill', playlistTracks: [{name:"",artist:"",album:"",id:""}] }
+  
   }
-  return (){
+
+  addTrack(track) {
+    if (this.state.playlistTracks.find(trackSaved => trackSaved.id === track.id)) {
+    return;
+    };
+  }
+
+  render(){
+    return(
     <div>
   <h1>Ja<span className="highlight">mmm</span>ing</h1>
   <div className="App">
@@ -22,6 +32,7 @@ class App extends React.Component {
     </div>
   </div>
 </div>
+    )
   };
 }
 
