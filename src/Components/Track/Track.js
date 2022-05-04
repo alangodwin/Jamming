@@ -14,13 +14,14 @@ export class Track extends React.Component {
         return <button className="Track-action" onClick={this.addTrack}>+</button>
       }
     }
-    addTrack(track){
+    addTrack(){
       this.props.onAdd(this.props.track)
     };
     
-    removeTrack(track){
+    removeTrack(){
       //this.props.onRemove(this.props.track)
     };
+
     render(){
         return (
         <div className="Track">
