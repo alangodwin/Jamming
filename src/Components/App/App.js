@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.addTrack = this.addTrack.bind(this);
-    this.state = { searchResults: [{name:"1",artist:"artist1",album:"album1",id:"1"},{name:"1",artist:"artist2",album:"album2",id:"2"}], 
+    this.state = { searchResults: [{name:"1",artist:"artist1",album:"album1",id:"1"},{name:"2",artist:"artist2",album:"album2",id:"2"}], 
   playlistName: 'chill', playlistTracks: [{name:"3",artist:"artist3",album:"album3",id:"3"}] }
   
   }
