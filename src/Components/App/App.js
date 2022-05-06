@@ -41,8 +41,8 @@ class App extends React.Component {
   const trackURIs =  this.state.playlistTracks.map(track => track.uri)
   };
 
-  search(searchResults) {
-    console.log(searchResults)
+  search(term) {
+    console.log(term)
   }
 
   render(){
