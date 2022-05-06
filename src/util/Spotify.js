@@ -22,7 +22,7 @@ const spotify = {
                 window.history.pushState('Access Token', null, '/');
                 return userAccessToken;
             } else {
-                `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`
+                window.location.href = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`
             }
             
         }
@@ -31,18 +31,5 @@ const spotify = {
 }
 
 
-
-
-const state = generateRandomString(16);
-
-localStorage.setItem(stateKey, state);
-const scope = 'user-read-private user-read-email';
-
-var url = 'https://accounts.spotify.com/authorize';
-url += '?response_type=token';
-url += '&client_id=' + encodeURIComponent(client_id);
-url += '&scope=' + encodeURIComponent(scope);
-url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
-url += '&state=' + encodeURIComponent(state);
 
 export default spotify
