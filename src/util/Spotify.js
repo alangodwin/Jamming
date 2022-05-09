@@ -27,6 +27,24 @@ const spotify = {
             
         }
 
+    },
+    search(term){
+        const userAccessToken = spotify.getAccesstoken();
+        return  fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
+            method: 'GET',
+            headers: {Authorization: `Bearer ${userAccessToken}`}
+
+        })
+        .then(response => {
+            return response.json();
+        }).then(jsonResponse => {
+            if(!jsonResponse.tracks){
+                return []
+            }
+        return jsonResponse.tracks.items.map()
+    })
+    
+
     }
 }
 
