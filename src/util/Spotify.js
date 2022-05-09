@@ -1,9 +1,9 @@
 
-import { clientID } from '../key.js' 
+import { clientID } from '../Components/key.js' 
 const redirectUri = 'http://localhost:3000'
 
 let userAccessToken
-const spotify = {
+export const Spotify = {
     getAccesstoken(){
         if(userAccessToken){
             return userAccessToken
@@ -29,7 +29,7 @@ const spotify = {
 
     },
     search(term){
-        const userAccessToken = spotify.getAccesstoken();
+        const userAccessToken = Spotify.getAccesstoken();
         return  fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
             method: 'GET',
             headers: {Authorization: `Bearer ${userAccessToken}`}
@@ -41,13 +41,16 @@ const spotify = {
             if(!jsonResponse.tracks){
                 return []
             }
-        return jsonResponse.tracks.items.map()
+        return jsonResponse.tracks.items.map(track => ({
+            id: track.id,
+            name: track.name,
+            artist: track.artist[0].name,
+            album: track.album.name,
+            uri: track.uri
+        }));
     })
     
 
     }
 }
 
-
-
-export default spotify
