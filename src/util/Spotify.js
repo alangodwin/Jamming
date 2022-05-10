@@ -2,7 +2,10 @@
 import { clientID } from '../Components/key.js' 
 const redirectUri = 'http://localhost:3000'
 
-let userAccessToken
+
+
+let userAccessToken;
+
 export const Spotify = {
     getAccesstoken(){
         if(userAccessToken){
@@ -44,7 +47,7 @@ export const Spotify = {
         return jsonResponse.tracks.items.map(track => ({
             id: track.id,
             name: track.name,
-            artist: track.artist[0].name,
+            artist: track.artists[0].name,
             album: track.album.name,
             uri: track.uri
         }));
